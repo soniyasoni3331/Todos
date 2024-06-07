@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {useDispatch} from 'react-redux' // use selector and use dispatch are properties of react not RTK
+import {useDispatch} from 'react-redux' 
 import { addTodo } from '../features/todo/todoSlice'
  
 function AddTodo() {
