@@ -1,4 +1,5 @@
 import { createSlice,nanoid } from "@reduxjs/toolkit"; // nanoid method for generating unique id 
+import { useState } from "react";
 
 // creating initial state - 
 const initialState = {
@@ -22,11 +23,15 @@ export const todoSlice = createSlice({
             state.todos = state.todos.filter((todo)=> todo.id !== action.payload)
         },
         updateTodo: (state, action)=>{
-            
+            // const [text, setText] = useState("")
+            state.todos = state.todos.map((todo)=>{ 
+                (todo.id === action.payload.id)?{...todo,text: action.payload.text}: todo
+            })
+                 
         }
     }
 })//we can name slices 
 
-export const {addTodo, removeTodo} = todoSlice.actions
+export const {addTodo, removeTodo, updateTodo} = todoSlice.actions
 
 export default todoSlice.reducer

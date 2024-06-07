@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {useDispatch} from 'react-redux' 
+import {useDispatch} from 'react-redux' // use selector and use dispatch are properties of react not RTK
 import { addTodo } from '../features/todo/todoSlice'
  
 function AddTodo() {
@@ -8,7 +8,7 @@ function AddTodo() {
 
     const addTodoHandler = (e) =>{
         e.preventDefault()
-        dispatch(addTodo(input))
+        dispatch(addTodo(input)) // dispatch reducer ko use krte hue store me value add krta h
         setInput('')
     }
   return (

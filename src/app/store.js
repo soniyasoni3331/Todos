@@ -2,5 +2,5 @@ import { configureStore } from '@reduxjs/toolkit' //configuring store or creatin
 import todoReducer from '../features/todo/todoSlice'
 
 export const store = configureStore({
-    reducer: todoReducer
+    reducer: todoReducer 
 }) // configureStore method takes an object. 
